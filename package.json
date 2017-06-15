@@ -1,0 +1,35 @@
+{
+  "name": "es6-promise-shim",
+  "version": "0.1.0",
+  "description": "A lightweight implementation of Promise in pure ES5 for older JS engines",
+  "main": "es6-promise-shim.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node ./test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ariyankhan/es6-promise-shim.git"
+  },
+  "keywords": [
+    "promise",
+    "es6-promise",
+    "promise-library",
+    "promise-implementations",
+    "es6",
+    "es6-harmony",
+    "es",
+    "javascript-promise",
+    "polyfill",
+    "ponyfill",
+    "promise-polyfill"
+  ],
+  "author": "Ariyan Khan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ariyankhan/es6-promise-shim/issues"
+  },
+  "homepage": "https://github.com/ariyankhan/es6-promise-shim#readme"
+}
