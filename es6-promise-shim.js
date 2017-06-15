@@ -40,9 +40,13 @@
 
     var floor = Math.floor;
 
+    var abs = Math.abs;
+
     var ES6 = typeof global.ES6 === "object" ? global.ES6 : (global.ES6 = {});
 
     var max = Math.max;
+
+    var min = Math.min;
 
     var isCallable = function (fn) {
         return typeof fn === 'function';
@@ -114,9 +118,16 @@
             return new Promise(function (resolve, reject) {
                 postToMessageQueue(reject, undefined, TypeError("First argument of Promise.race can not be undefined or null"));
             });
-        var isSettled = false;
+        var length,
+            isSettled = false;
+
+        length = Number(promiseArray.length);
+        length = length !== length ? 0 : length;
+        length = (length < 0 ? -1 : 1) * floor(abs(length));
+        length = max(length, 0);
+
         return new Promise(function (resolve, reject) {
-            forEach.call(promiseArray, function (promise) {
+            var fn = function (promise) {
                 var temp1,
                     temp2;
                 if (isPromise(promise)) {
@@ -185,7 +196,10 @@
                         });
                     }
                 }
-            })
+            };
+            for(var i = 0; i < length; ++i) {
+                fn(promiseArray[i]);
+            }
         });
     };
 
@@ -198,17 +212,21 @@
             });
         var counter = 0,
             length,
-            values = new Array(length);
+            values;
 
         length = Number(promiseArray.length);
         length = length !== length ? 0 : length;
-        length = max(Math.floor(length), 0);
+        length = (length < 0 ? -1 : 1) * floor(abs(length));
+        length = max(length, 0);
+
+        values = new Array(length);
 
         return new Promise(function (resolve, reject) {
+            var fn;
             if (length === 0)
                 resolve(values);
             else {
-                forEach.call(promiseArray, function (promise, index) {
+                fn = function (promise, index) {
                     var temp1,
                         temp2;
                     if (isPromise(promise)) {
@@ -272,7 +290,10 @@
                             });
                         }
                     }
-                });
+                };
+                for(var i = 0; i < length; ++i) {
+                    fn(promiseArray[i], i);
+                }
             }
         });
     };
@@ -522,6 +543,12 @@
                 writable: true,
                 configurable: true
             }
+        });
+
+        defineProperty(global, "Promise", {
+            value: Promise,
+            writable: true,
+            configurable: true
         });
     }
 
