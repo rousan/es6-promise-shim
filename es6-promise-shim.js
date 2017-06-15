@@ -127,7 +127,9 @@
         length = max(length, 0);
 
         return new Promise(function (resolve, reject) {
-            var fn = function (promise) {
+            var fn,
+                i = 0;
+            fn = function (promise) {
                 var temp1,
                     temp2;
                 if (isPromise(promise)) {
@@ -197,7 +199,7 @@
                     }
                 }
             };
-            for(var i = 0; i < length; ++i) {
+            for(; i < length; ++i) {
                 fn(promiseArray[i]);
             }
         });
@@ -222,7 +224,8 @@
         values = new Array(length);
 
         return new Promise(function (resolve, reject) {
-            var fn;
+            var fn,
+                i = 0;
             if (length === 0)
                 resolve(values);
             else {
@@ -291,7 +294,7 @@
                         }
                     }
                 };
-                for(var i = 0; i < length; ++i) {
+                for(; i < length; ++i) {
                     fn(promiseArray[i], i);
                 }
             }
