@@ -1,7 +1,7 @@
 {
   "name": "es6-promise-shim",
-  "version": "0.1.0",
-  "description": "A lightweight implementation of Promise in pure ES5 for older JS engines",
+  "version": "0.1.1",
+  "description": "A lightweight implementation of Promise in pure ES5 code for older JS engines",
   "main": "es6-promise-shim.js",
   "directories": {
     "test": "test"
@@ -14,6 +14,8 @@
     "url": "git+https://github.com/ariyankhan/es6-promise-shim.git"
   },
   "keywords": [
+    "es6-promise-shim",
+    "promise-shim",
     "promise",
     "es6-promise",
     "promise-library",
