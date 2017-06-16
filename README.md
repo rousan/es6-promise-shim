@@ -1,6 +1,6 @@
 # ES6 Promise Shim
 
-Provides a lightweight implementation of Promise in pure ES5 code for older browsers or older JavaScript engines.
+Provides a lightweight implementation of Promise in pure ES5 code for older browsers or older JavaScript engines.  
 
 ## Implemented
 
