@@ -70,13 +70,13 @@ console.log(ES6.isPromise(promise));
    `npm test`
      
 ## Contributors
-   * [Ariyan Khan](https://github.com/ariyankhan)
+   * [Rousan Ali](https://github.com/ariyankhan)
    
 ## License
 
 MIT License
 
-Copyright (c) 2017 Ariyan Khan
+Copyright (c) 2017 Rousan Ali
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
