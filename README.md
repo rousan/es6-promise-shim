@@ -21,7 +21,7 @@ Provides a lightweight implementation of Promise in pure ES5 code for older brow
 require("es6-promise-shim");
 
 
-var promise = new Promise(function (resolve, reject) {
+var promise = new Promise(function (resolve, reject) { 
     setTimeout(resolve, 0, 101);
 }).then(function (value) {
     console.log(value);
